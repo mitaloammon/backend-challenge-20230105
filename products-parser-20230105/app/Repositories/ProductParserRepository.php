@@ -11,7 +11,7 @@ class ProductParserRepository
 
     public function __construct(ProductParser $model)
     {
-        $this->entity = $model::with('productParserAPI')->get();
+        $this->entity = $model;
     }
 
     public function getAll()

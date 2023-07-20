@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('code');
             $table->string('url');
+            $table->string('status')->nullable();
+            $table->dateTime('imported_t')->nullable()->date;
             $table->string('creator');
             $table->timestamp('created_t');
             $table->timestamp('last_modified_t');

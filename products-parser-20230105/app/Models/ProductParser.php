@@ -9,7 +9,6 @@ class ProductParser extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'code',
         'status',
@@ -34,10 +33,7 @@ class ProductParser extends Model
         'nutriscore_grade',
         'main_category',
         'image_url',
+        'status',
+        'imported_t'
     ];
-
-    public function productParserAPI()
-    {
-        return $this->hasMany(ProductParserAPI::class);
-    }
 }

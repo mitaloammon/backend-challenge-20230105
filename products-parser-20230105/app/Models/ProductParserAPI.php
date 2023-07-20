@@ -10,14 +10,8 @@ class ProductParserAPI extends Model
     use HasFactory;
 
     protected $fillable = [
+        'dateImport',
         'status',
-        'imported_t',
-        'name',
-        'description'
+        'memoryConsumed'
     ];
-
-    public function productParser()
-    {
-        return $this->belongsTo(ProductParser::class);
-    }
 }

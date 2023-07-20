@@ -22,10 +22,9 @@ class StoreProductParserAPIPost extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required|in:draft,trash,published',
-            'imported_t' => 'required',
-            'name' => 'string|required',
-            'description' => 'string|required',
+            'dateImport' => 'required',
+            'status' => 'required',
+            'memoryConsumed' => 'required'
         ];
     }
 }

@@ -24,7 +24,7 @@ class ProductParserController extends Controller
      */
     public function index()
     {
-        $product = $this->productService->get()->paginate(100);
+        $product = $this->productService->get();
 
         return ProductParserResource::collection($product);
     }

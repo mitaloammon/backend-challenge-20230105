@@ -13,14 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_parser_a_p_i_s', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_parser_id');
-            $table->enum('status', ['draft', 'trash', 'published'])->default('draft');
-            $table->timestamp('imported_t')->useCurrent();
-            $table->string('description');
-            $table->string('name');
+            $table->dateTime('dateImport')->nullable()->date;
+            $table->string('status')->nullable();
+            $table->string('memoryConsumed')->nullable();
             $table->timestamps();
-
-            $table->foreign('product_parser_id')->references('id')->on('product_parsers');
         });
     }
 

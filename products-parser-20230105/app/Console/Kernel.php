@@ -12,9 +12,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('app:products')
-        //     ->hourly()
-        //     ->timezone('America/New_York');
+        $schedule->command('app:a-p-i-data')
+            ->timezone('America/Bahia')
+            ->at('23:00');
     }
 
     /**

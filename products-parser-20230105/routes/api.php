@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductParserController;
+use App\Http\Controllers\ProductParserAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,7 @@ use App\Http\Controllers\ProductParserController;
 |
 */
 
-Route::get('/', function () {
-    return response()->json([
-        'success' => true,
-    ]);
-});
+Route::resource('/', ProductParserAPIController::class);
 
 Route::put('/products/{code}', [ProductParserController::class, 'update']);
 Route::delete('/products/{code}', [ProductParserController::class, 'delete']);
