@@ -33,7 +33,7 @@ class ProductParserFactory extends Factory
             'stores'           => $this->faker->word(),
             'ingredients_text' => $this->faker->sentence(),
             'traces'           => $this->faker->sentence(),
-            'serving_size'     => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 100),
+            'serving_size'     => $this->faker->word(),
             'serving_quantity' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 5),
             'nutriscore_score' => $this->faker->randomNumber(2),
             'nutriscore_grade' => $this->faker->randomLetter(),
