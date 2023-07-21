@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_parsers', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->bigInteger('code');
             $table->string('url')->nullable();
             $table->string('imported_t')->nullable();

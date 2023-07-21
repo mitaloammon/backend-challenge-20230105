@@ -37,4 +37,6 @@ class ProductParser extends Model
         'status',
         'imported_t'
     ];
+
+    protected $guarded = ['id'];
 }

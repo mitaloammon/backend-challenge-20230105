@@ -29,9 +29,9 @@ class ProductParserRepository
         return $this->entity->findOrfail($identify);
     }
 
-    public function updateProduct(string $identify, array $data)
+    public function updateProduct(string $id, array $data)
     {
-        $model = $this->getProduct($identify);
+        $model = $this->getProduct($id);
 
         return $model->update($data);
     }

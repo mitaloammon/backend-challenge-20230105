@@ -64,7 +64,7 @@ class ProductParserController extends Controller
      */
     public function update(StoreProductParserPost $request, $id)
     {
-        $this->productService->updateProduct($id, $request->validated());
+        $this->productService->updateProduct($request->validated(), $id);
 
         return response()->json([
             'updated' => true

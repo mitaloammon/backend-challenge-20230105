@@ -37,9 +37,9 @@ class ProductParserService
         }
     }
 
-    public function updateProduct(string $identify, array $data)
+    public function updateProduct(array $data, string $id)
     {
-        return $this->repository->updateProduct($identify, $data);
+        return $this->repository->updateProduct($id, $data);
     }
 
     public function deleteProduct(string $identify)
