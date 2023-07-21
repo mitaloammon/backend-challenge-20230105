@@ -21,8 +21,8 @@ class ProductParserFactory extends Factory
             'code'             => $this->faker->randomNumber(),
             'url'              => $this->faker->url(),
             'creator'          => $this->faker->word(),
-            'created_t'        => $this->faker->randomNumber(),
-            'last_modified_t'  => $this->faker->randomNumber(),
+            'created_t'        => $this->faker->dateTimeBetween('-1 week', '+1 week'),
+            'last_modified_t'  => $this->faker->dateTimeBetween('-1 week', '+1 week'),
             'product_name'     => $this->faker->word(),
             'quantity'         => $this->faker->randomNumber(),
             'brands'           => $this->faker->word(),
@@ -39,7 +39,7 @@ class ProductParserFactory extends Factory
             'nutriscore_grade' => $this->faker->randomLetter(),
             'main_category'    => $this->faker->word(),
             'image_url'        => $this->faker->url(),
-            'status'           => $this->faker->word(),
+            'status'           => $this->faker->randomElement(['draft', 'trash', 'published']),
             'imported_t'       => $this->faker->iso8601(),
         ];
     }

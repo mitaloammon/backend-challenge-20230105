@@ -15,13 +15,14 @@ class ProductParserResource extends JsonResource
     public function toArray($request): array
     {
         return [
+            'id' => $this->id,
             'code' => $this->code,
             'status' => $this->status,
             'imported_t' => $this->imported_t,
             'url' => $this->url,
             'creator' => $this->creator,
-            'created_t' => Carbon::create($this->created_t)->format('Y-m-d'),
-            'last_modified_t' => Carbon::create($this->last_modified_t)->format('Y-m-d'),
+            'created_t' => Carbon::create($this->created_t)->format('Y-m-d H:i:s'),
+            'last_modified_t' => Carbon::create($this->last_modified_t)->format('Y-m-d H:i:s'),
             'product_name' => $this->product_name,
             'quantity' => $this->quantity,
             'brands' => $this->brands,

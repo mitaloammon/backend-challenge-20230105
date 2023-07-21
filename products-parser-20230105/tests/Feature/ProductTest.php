@@ -28,13 +28,13 @@ class ProductTest extends TestCase
         $response->assertJson(function (AssertableJson $json) use ($products) {
             $json->whereAllType([
                 'data.0.id'               => 'integer',
-                'data.0.code'             => 'string|integer',
+                'data.0.code'             => 'integer',
                 'data.0.status'           => 'string',
                 'data.0.imported_t'       => 'string',
                 'data.0.url'              => 'string',
                 'data.0.creator'          => 'string',
-                'data.0.created_t'        => 'integer|string',
-                'data.0.last_modified_t'  => 'integer|string',
+                'data.0.created_t'        => '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/|string',
+                'data.0.last_modified_t'  => '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/|string',
                 'data.0.product_name'     => 'string',
                 'data.0.quantity'         => 'string',
                 'data.0.brands'           => 'string',

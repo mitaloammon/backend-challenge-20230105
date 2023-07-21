@@ -16,10 +16,10 @@ return new class extends Migration
             $table->bigInteger('code');
             $table->string('url')->nullable();
             $table->string('imported_t')->nullable();
-            $table->string('status')->nullable();
+            $table->enum('status', ['draft', 'trash', 'published'])->default('draft');
             $table->string('creator')->nullable();
-            $table->integer('created_t')->nullable();
-            $table->integer('last_modified_t')->nullable();
+            $table->datetime('created_t')->nullable();
+            $table->datetime('last_modified_t')->nullable();
             $table->string('product_name')->nullable();
             $table->string('quantity')->nullable();
             $table->string('brands')->nullable();
