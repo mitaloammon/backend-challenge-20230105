@@ -39,7 +39,13 @@ class APIData extends Command
             if (file_put_contents('./' . $file_name, file_get_contents('compress.zlib://' . $url))) {
 
                 try {
-                    ProductParser::create(['./' . $file_name]);
+                    ProductParser::updateOrCreate(
+                        ['./' . $file_name],
+                        [
+                            'status'           => 'published',
+                            'imported_t'       => now()
+                        ]
+                    );
                 } catch (Exception $e) {
                     echo "Exceção: " . $e->getMessage() . "\n";
                 }
