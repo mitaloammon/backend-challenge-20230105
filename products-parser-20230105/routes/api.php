@@ -18,7 +18,6 @@ use App\Http\Controllers\ProductParserAPIController;
 
 Route::resource('/', ProductParserAPIController::class);
 
-Route::post('/products', [ProductParserController::class, 'store']);
 Route::put('/products/{code}', [ProductParserController::class, 'update']);
 
 Route::delete('/products/{code}', [ProductParserController::class, 'delete']);

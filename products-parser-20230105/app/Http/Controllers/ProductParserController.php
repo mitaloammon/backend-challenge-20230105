@@ -29,28 +29,17 @@ class ProductParserController extends Controller
         return ProductParserResource::collection($product);
     }
 
-    /**
-     * Store a nely created resource in storage
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreProductParserPost $request)
-    {
-        $product = $this->productService->createNewProduct($request->validated());
 
-        return new ProductParserResource($product);
-    }
 
     /**
      * Display the specified resource
      *
-     * @param int $id
+     * @param int $code
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        $product = $this->productService->getProduct($id);
+        $product = $this->productService->getProduct($code);
 
         return new ProductParserResource($product);
     }
@@ -59,12 +48,12 @@ class ProductParserController extends Controller
      * Update the specified resource in storage
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param int $code
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreProductParserPost $request, $id)
+    public function update(StoreProductParserPost $request, $code)
     {
-        $this->productService->updateProduct($request->validated(), $id);
+        $this->productService->updateProduct($request->validated(), $code);
 
         return response()->json([
             'updated' => true
@@ -77,9 +66,9 @@ class ProductParserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($code)
     {
-        $this->productService->deleteProduct($id);
+        $this->productService->deleteProduct($code);
 
         return response()->json([], 204);
     }

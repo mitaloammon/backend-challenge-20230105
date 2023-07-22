@@ -16,12 +16,7 @@ class ProductParserRepository
 
     public function getAll()
     {
-        return $this->entity->all();
-    }
-
-    public function createNewProduct(array $data)
-    {
-        return $this->entity->create($data);
+        return $this->entity->paginate(100)->all();
     }
 
     public function getProduct(string $identify)
@@ -29,9 +24,9 @@ class ProductParserRepository
         return $this->entity->findOrfail($identify);
     }
 
-    public function updateProduct(string $id, array $data)
+    public function updateProduct(string $code, array $data)
     {
-        $model = $this->getProduct($id);
+        $model = $this->getProduct($code);
 
         return $model->update($data);
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_parsers', function (Blueprint $table) {
             $table->id('id');
-            $table->bigInteger('code');
+            $table->bigInteger('code')->unique();
             $table->string('url')->nullable();
             $table->string('imported_t')->nullable();
             $table->enum('status', ['draft', 'trash', 'published'])->default('draft');
